@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện Thoại Giá Kho-Điện Thoại</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/dtgkicon.png">
+    <style>
+footer {
+    background: white;
+    background: -webkit-linear-gradient(59deg, #222222, #16222A);
+    background: linear-gradient(59deg, #343434, #16222A);
+    color: white;
+
+}
+
+footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+}
+
+footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+}
+
+.gia {
+  
+  display: flex;
+  justify-content: space-evenly;
+  color:rgb(0, 0, 0);
+  line-height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+.giacu {
+  text-decoration: line-through;
+  color:rgb(166, 0, 0);
+}
+button {
+    background-color: rgb(37 120 242);
+    color: white !important;
+}
+h3{
+    color:#000000;
+    background-color:rgb(235, 200, 27);
+    border:5px solid rgb(235, 200, 27) ; background-color:rgb(235, 200, 27); border-radius: 2px;margin-top: 10px;
+    font-size: 30px;
+}
+.list-group {
+    background-color: #222222;
+}
+.list-group-item{
+    background-color: #222222;
+    color:#fff;
+}
+.list-group a:hover {
+    background-color:rgb(235, 200, 27);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul {
+        list-style: none;
+    }
+        
+    a {
+        text-decoration: none;
+        
+       }
+        
+    ul.list-person {
+           display: flex;
+    }
+        
+       ul.list-person li {
+           display: block;
+        max-width: 600px;
+        overflow: hidden;
+    }
+        
+       ul.list-person li a img {
+        max-width: 100%;
+        transition: all 0.5s ease-in-out;
+        padding-right: 45px;
+    }
+        
+    ul.list-person li:hover img {
+        transform: scale(1.2);
+    }
+    /* .col-md-12{
+        padding-left: 200px;
+    } */
+    .list-group {
+    background-color: #222222;
+}
+.list-group-item{
+    background-color: #222222;
+    color:#fff;
+}
+.xemthem{
+    background-color: rgb(0, 0, 161);
+    color: aliceblue;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.nut1{
+    height: 200px;
+  position: relative;
+}
+.nut2{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+    </style>
+    
+</head>
+<body>  
+    <nav class="navbar navbar-expand-lg " style="background-color: rgb(235, 200, 27);">
+        <a href="index.html"><img src="images/dienthoaigiakho.png" style="width: 250px;height: 60px;margin-right: 100px;"></a>
+        
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Bạn muốn tìm gì..." aria-label="Search"  style="width:500px; border-radius: 50px;">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <img src="images/search.png" height="10px" width="10px"/></button>
+            </form>
+            <ul class="navbar-nav mr-auto" style="margin-left: 80px;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color: rgb(0, 0, 0);"><img src="images/swap.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Thu cũ đổi mới</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: rgb(0, 0, 0);"><img src="images/info.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Thông tin</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" style="color: rgb(0, 0, 0);" href="giohang.html"><img src="images/store.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Giỏ hàng</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="list-group col-md-3 mt-4" >
+                <a href="#" class="list-group-item list-group-item-action">Điện thoại</a>
+                <a href="#" class="list-group-item list-group-item-action ">Đồng hồ</a>
+                <a href="#" class="list-group-item list-group-item-action ">Tablet</a>
+                <a href="#" class="list-group-item list-group-item-action ">Macbook</a>
+                <a href="#" class="list-group-item list-group-item-action">Âm thanh</a>
+                <a href="#" class="list-group-item list-group-item-action ">Phụ kiện</a>
+                <a href="#" class="list-group-item list-group-item-action ">Mua hàng trả góp</a>
+            </div>
+
+            <div id="carouselExampleIndicators" class="carousel slide col-md-9 mt-4" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 img-fluid" src="images/banner0.webp" alt="1">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="images/banner1.webp" alt="2">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="images/banner2.webp" alt="3">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="images/banner3.webp" alt="4">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="images/banner4.webp" alt="5">
+                    </div>
+                    
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        
+                <div class="row bg-danger-subtle">
+                    <article class="col-12">
+                        <h1 style="color: #5c3e31; font-weight: bolder;">IPHONE</h1>
+                        
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+
+                            <div class="col-md-12 bg-gradient">
+                                <div class="row">
+
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/14pm.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>Iphone 14 Pro Max</b></div>
+                                            <div class="text" style="font-size: 15px;">36.389.000đ</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/14p.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>Iphone 14 Pro</b></div>
+                                            <div class="text" style="font-size: 15px;">24.389.000đ</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/13pm.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>IPhone 13 Pro Max</b></div>
+                                            <div class="text" style="font-size: 15px;">21.489.000đ</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/13p.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>IPhone 13 Pro</b></div>
+                                            <div class="text" style="font-size: 15px;">18.989.000đ</div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-12 bg-gradient">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/12pm.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>Iphone 12 Pro Max</b></div>
+                                            <div class="text" style="font-size: 15px;">16.389.000đ
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/12p.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;">Iphone 12 Pro<b></b></div>
+                                            <div class="text" style="font-size: 15px;">13.389.000đ
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/11pm.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>Iphone 11 Pro Max</b></div>
+                                            <div class="text" style="font-size: 15px;">12.489.000đ</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <a href="">
+                                                        <img class="mx-auto d-block img-fluid" src="images/11p.webp" alt="Iphone13" width="250px">
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="title" style="font-size: 15px;"><b>IPhone 11 Pro</b></div>
+                                            <div class="text" style="font-size: 15px;">9.189.000đ
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                       
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                        <hr>
+                        <h1 style="color: #5c3e31; font-weight: bolder;">SAMSUNG</h1>
+                        <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+
+                                    <div class="col-md-12 bg-gradient">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/sss23.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy S23</b></div>
+                                                    <div class="text" style="font-size: 15px;">17.989.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/sszf4.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy ZFlip 4</b></div>
+                                                    <div class="text" style="font-size: 15px;">15.989.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/sss21.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy S21</b></div>
+                                                    <div class="text" style="font-size: 15px;">10.589.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/sszf3.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy ZFlip 3</b></div>
+                                                    <div class="text" style="font-size: 15px;">9.689.000đ</div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-12 bg-gradient">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/sss20.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy S20</b></div>
+                                                    <div class="text" style="font-size: 15px;">8.589.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/ssm53.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy M53</b></div>
+                                                    <div class="text" style="font-size: 15px;">8.589.000đ</div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/ssm32.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy M32</b></div>
+                                                    <div class="text" style="font-size: 15px;">3.989.000đ</div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/ssa04.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Samsung Galaxy A04s</b></div>
+                                                    <div class="text" style="font-size: 15px;">3.049.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                        <hr>
+                        <h1 style="color: #5c3e31; font-weight: bolder;">XIAOMI</h1>
+                        <h5>Hương vị tự nhiên, thơm ngon của Trà Việt với phong cách hiện đại tại Highlands Coffee sẽ giúp bạn gợi mở vị giác của bản thân và tận hưởng một cảm giác thật khoan khoái, tươi mới.</h5>
+                        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+
+                                    <div class="col-md-12 bg-gradient">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xam12p.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Mi 12 Pro</b></div>
+                                                    <div class="text" style="font-size: 15px;">21.489.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xamm12t.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Mi 12T</b></div>
+                                                    <div class="text" style="font-size: 15px;">10.889.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xamn11.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi Note 11</b></div>
+                                                    <div class="text" style="font-size: 15px;">4.089.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xamn10s.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi Note 10s</b></div>
+                                                    <div class="text" style="font-size: 15px;">4.049.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-12 bg-gradient">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xamn10c.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi 10C</b></div>
+                                                    <div class="text" style="font-size: 15px;">3.149.000đ
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+                                                                <img class="mx-auto d-block img-fluid" src="images/xam10a.webp" alt="Iphone13" width="250px">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi 10A</b></div>
+                                                    <div class="text" style="font-size: 15px;">2.299.000đ</div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+
+                                                                <img class="mx-auto d-block img-fluid" src="images/xama1.webp" alt="Iphone13" width="250px">
+
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi A1</b></div>
+                                                    <div class="text" style="font-size: 15px;">1.849.000đ</div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="card text-center">
+                                                    <ul class="list-person">
+                                                        <li>
+                                                            <a href="">
+
+                                                                <img class="mx-auto d-block img-fluid" src="images/xam9a.webp" alt="Iphone13" width="250px">
+
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="title" style="font-size: 15px;"><b>Xiaomi Redmi 9A</b></div>
+                                                    <div class="text" style="font-size: 15px;">1.829.000đ</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- <p>&nbsp</p> -->
+                        <div class="nut1">
+                        <div class="nut2" >
+                            <button class="xemthem">Xem Thêm</button>
+                        </div>
+                    </div>
+                       <!-- <p>&nbsp</p> -->
+                    </article>
+                </div>
+         
+
+
+    </div>
+    
+
+
+    
+
+
+
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="footer-pad">
+                            <h4>Thông tin liên hệ</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Mua Nhanh Online: 19008922 (7-24H mỗi ngày)</a></li>
+                                <li><a href="#">121 Chu Văn An, P26, Quận Bình Thạnh, HCM</a></li>
+                                <li><a href="#">1247, Đường 3 Tháng 2, P6, Quận 11, HCM</a></li>
+                                <li><a href="#">56 Lê Văn Việt, Phường Hiệp Phú, TP. Thủ Đức</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="footer-pad">
+                            <h4>Câu chuyện giá kho</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Giới thiệu về Giá Kho</a></li>
+                                <li><a href="#">Tuyển dụng</a></li>
+                                <li><a href="#">Hợp tác cùng GIÁ KHO</a></li>
+                                <li><a href="#">Quy định về việc sao lưu dữ liệu</a></li>
+                                <li><a href="#">Nhật ký Giao Niềm Vui</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>Kiết nối với chúng tôi</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a><img src="images/facebook.png" float="right"/></li>
+                                <li><a href="#"></a><img src="images/youtube.png"/></li>
+                                <li><a href="#"></a><img src="images/instagram.png"/></li>
+                                <li><a href="#"></a><img src="images/zalo.png"/></li>
+                            </ul>
+                        </div>
+                    </div>   
+                    <div>
+                        © 2017-2023 GIÁ KHO GROUP–Website Dienthoaigiakho.vn Giấy chứng nhận Kinh doanh: 41O8033312 UBND Q. Bình Thạnh, HCM cấp ngày 12/11/2016 | Mã số thuế : 8287794405 | Địa Chỉ : 121 Chu Văn An. P26 Bình Thạnh HCM || HKD TUẤN ANH. Chịu trách nhiệm nội dung : Vũ Việt Tuấn Anh “Lời góp ý như một món quà” đến BQL Giá Kho lắng nghe & cải tiến tốt hơn mỗi ngày: trogiup@dienthoaigiakho.vn
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="images/dtgkicon.png">
+    <style>
+footer {
+    background: white;
+    background: -webkit-linear-gradient(59deg, #222222, #16222A);
+    background: linear-gradient(59deg, #343434, #16222A);
+    color: white;
+
+}
+
+footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+}
+
+footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+}
+
+
+button {
+    background-color: rgb(37 120 242);
+    color: white !important;
+}
+h3{
+    color:#000000;
+    background-color:rgb(255, 255, 255);
+    font-size: 20px;
+}
+h4{
+    color:rgb(179, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+.list-group {
+    background-color: #222222;
+}
+.list-group-item{
+    background-color: #222222;
+    color:#fff;
+}
+.list-group a:hover {
+    background-color:rgb(235, 200, 27);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.poly-pord {
+            height: 150px;
+            max-width: 250px;
+        }
+        
+        #menu3 ul li a:hover {
+            background-color: #923036;
+            color: white;
+        }
+        
+        #menu3 ul li a {
+            color: rgba(214, 47, 47, 0.856);
+        }
+        
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        ul.list-person {
+            display: flex;
+        }
+        
+        ul.list-person li {
+            display: block;
+            max-width: 600px;
+            overflow: hidden;
+        }
+        
+        ul.list-person li a img {
+            max-width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        ul.list-person li:hover img {
+            transform: scale(1.1);
+        }
+        
+        #btn1 {
+            background-color: rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            border: rgb(235, 200, 27);
+            font-size: 13px;
+            font-weight: bolder;
+        }
+        
+        #btn1:hover {
+            background-color:rgb(235, 200, 27);
+            color: rgb(0, 0, 0);
+        }
+    </style>
+    
+</head>
+   
+
+    <body ng-app="myapp">
+        <nav class="navbar navbar-expand-lg " style="background-color: rgb(235, 200, 27);">
+            <a href="index.html"><img src="images/dienthoaigiakho.png" style="width: 250px;height: 60px;margin-right: 100px;"></a>
+            
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Bạn muốn tìm gì..." aria-label="Search"  style="width:500px; border-radius: 50px;">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <img src="images/search.png" height="10px" width="10px"/></button>
+                </form>
+                <ul class="navbar-nav mr-auto" style="margin-left: 80px;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" style="color: rgb(0, 0, 0);"><img src="images/swap.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Thu cũ đổi mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: rgb(0, 0, 0);"><img src="images/info.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Thông tin</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgb(0, 0, 0);" href="#"><img src="images/store.png" style="width: 25px; height:25px; margin: 5px;padding-bottom: 5px;"/>Giỏ hàng</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+        <div class="container">
+            <div class="container">
+                                                    
+                </div>
+                <div class="row">
+                    <img src="images/banner0.webp" alt="" width="100%">
+                </div>
+    
+    
+    
+                <br>
+
+                
+            </div>
+            <br>
+            <div class="card-header" style="background-color: rgba(235, 200, 27);">
+                <div class="row ml-4">
+                    <b class="ml-4" style="font-size: 20px; color: #000000;">ƯU ĐÃI:</b>
+                    <p class="ml-5" style="font-size: 20px; color: #000000; font-weight: bolder;" width="100%" id="demo"></p>
+                </div>
+            </div>
+            <br>
+            <a class="text-right" href="#!cart"><img width="80px" src="images/store.png" alt="">
+            </a>
+            <br>
+            <span class="pt-4" style="font-size: 20px; font-weight: bolder;">Số lượng: {{cart.length}}</span>
+            <div class="row d-flex justify-content-center">
+                <div>
+                    <hr>
+                    <div class="pt-4" ng-view></div>
+                </div>
+            </div>
+            <hr>
+            <div ng-controller="myCtrl">
+                <div ng-app="myApp">
+    
+                    <!-- <input type="text" ng-model="search"> -->
+    
+                    <h1 class="text-center" style="font-weight: bolder; color:#992929 ;">IPHONE</h1>
+                    <input type="text" ng-model="search">
+                    <button ng-click="searchSP()" data-toggle="modal" data-target="#exampleModal">Tìm</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"><b>DANH SÁCH SẢN PHẨM</b></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="card m-3" ng-repeat="p in products | filter: search">
+    
+                                            <div class="card text-center">
+                                                <ul class="list-person">
+                                                    <li>
+                                                        <div>
+                                                            <a href="#!detail/{{p.id}}"><img width="100%" src="{{p.Image}}" class="poly-pord"></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+    
+                                                <div><b>{{p.name}}</b></div>
+                                                <div><b style="color: red;">{{p.Price}} đ</b></div>
+                                            </div>
+    
+    
+    
+                                        </div>
+                                        <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                        <div style="font-size: 15px; color: red;"><b>{{p.Price}} đ</b></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                <button type="button" class="btn btn-primary">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <br>
+                <div ng-controller="myCtrl">
+                    <button id="btn1" class="btn btn-primary" ng-click="tang()">Tăng dần</button>
+                    <button id="btn1" class="btn btn-primary" ng-click="giam()">Giảm dần</button>
+                    <div class="row">
+                        <div class="row">
+                            <div class="card m-3 ml-4" ng-repeat="p in products | filter: {kind : 'iphone'} | orderBy : sort">
+                                <div class="card text-center pr-2">
+                                    <ul class="list-person">
+                                        <li>
+                                            <a href="#!detail/{{p.id}}"><img class="img-fluid" width="200px" src="{{p.Image}}" class="poly-pord"></a>
+                                        </li>
+                                    </ul>
+    
+                                    <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                    <div style="font-size: 15px; color: red;"><b>{{p.Price}} đ</b></div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+    
+                <h1 class="text-center" style="font-weight: bolder; color:#992929">SAMSUNG</h1>
+                <input type="text" ng-model="search">
+                <button ng-click="searchSP()" data-toggle="modal" data-target="#exampleModal">Tìm</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>DANH SÁCH SẢN PHẨM</b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                        </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="card m-3" ng-repeat="p in products | filter: search">
+    
+                                        <div class="card text-center">
+                                            <ul class="list-person">
+                                                <li>
+                                                    <div>
+                                                        <a href="#!detail/{{p.id}}"><img width="100%" src="{{p.Image}}" class="poly-pord"></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+    
+                                            <div><b>{{p.name}}</b></div>
+                                            <div><b style="color: red;">{{p.Price}} đ</b></div>
+                                        </div>
+    
+    
+    
+                                    </div>
+                                    <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                    <div style="font-size: 15px; color: red;"><b>{{p.Price}}đ</b></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div ng-controller="myCtrl">
+                <button id="btn1" class="btn btn-primary" ng-click="tang()">Tăng dần</button>
+                <button id="btn1" class="btn btn-primary" ng-click="giam()">Giảm dần</button>
+                <div class="row">
+                    <div class="row">
+                        <div class="card m-3 ml-4" ng-repeat="p in products | filter: {kind : 'samsung'} | orderBy : sort">
+                            <div class="card text-center pr-2">
+                                <ul class="list-person">
+                                    <li>
+                                        <a href="#!detail/{{p.id}}"><img class="img-fluid" width="200px" src="{{p.Image}}" class="poly-pord"></a>
+                                    </li>
+                                </ul>
+                                <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                <div style="font-size: 15px; color: red;"><b>{{p.Price}} đ</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h1 class="text-center" style="font-weight: bolder; color:#992929">XIAOMI</h1>
+            <input type="text" ng-model="search">
+            <button ng-click="searchSP()" data-toggle="modal" data-target="#exampleModal">Tìm</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><b>DANH SÁCH SẢN PHẨM</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="card m-3" ng-repeat="p in products | filter: search">
+    
+                                    <div class="card text-center">
+                                        <ul class="list-person">
+                                            <li>
+                                                <div>
+                                                    <a href="#!detail/{{p.id}}"><img width="100%" src="{{p.Image}}" class="poly-pord"></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+    
+                                        <div><b>{{p.name}}</b></div>
+                                        <div><b style="color: red;">{{p.Price}} đ</b></div>
+                                    </div>
+    
+    
+    
+                                </div>
+                                <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                <div style="font-size: 15px; color: red;"><b>{{p.Price}}đ</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary">Lưu</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div ng-controller="myCtrl">
+                <button id="btn1" class="btn btn-primary" ng-click="tang()">Tăng dần</button>
+                <button id="btn1" class="btn btn-primary" ng-click="giam()">Giảm dần</button>
+                <div class="row">
+                    <div class="row">
+                        <div class="card m-3 ml-4" ng-repeat="p in products | filter: {kind : 'xiaomi'} | orderBy : sort">
+                            <div class="card text-center pr-2">
+                                <ul class="list-person">
+                                    <li>
+                                        <a href="#!detail/{{p.id}}"><img class="img-fluid" width="200px" src="{{p.Image}}" class="poly-pord"></a>
+                                    </li>
+                                </ul>
+                                <div style="font-size: 15px;"><b>{{p.name}}</b></div>
+                                <div style="font-size: 15px; color: red;"><b>{{p.Price}} đ</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <br>
+        <br>
+
+
+
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="footer-pad">
+                            <h4>Thông tin liên hệ</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Mua Nhanh Online: 19008922 (7-24H mỗi ngày)</a></li>
+                                <li><a href="#">121 Chu Văn An, P26, Quận Bình Thạnh, HCM</a></li>
+                                <li><a href="#">1247, Đường 3 Tháng 2, P6, Quận 11, HCM</a></li>
+                                <li><a href="#">56 Lê Văn Việt, Phường Hiệp Phú, TP. Thủ Đức</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="footer-pad">
+                            <h4>Câu chuyện giá kho</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Giới thiệu về Giá Kho</a></li>
+                                <li><a href="#">Tuyển dụng</a></li>
+                                <li><a href="#">Hợp tác cùng GIÁ KHO</a></li>
+                                <li><a href="#">Quy định về việc sao lưu dữ liệu</a></li>
+                                <li><a href="#">Nhật ký Giao Niềm Vui</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>Kiết nối với chúng tôi</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a><img src="images/facebook.png" float="right"/></li>
+                                <li><a href="#"></a><img src="images/youtube.png"/></li>
+                                <li><a href="#"></a><img src="images/instagram.png"/></li>
+                                <li><a href="#"></a><img src="images/zalo.png"/></li>
+                            </ul>
+                        </div>
+                    </div>   
+                    <div>
+                        © 2017-2023 GIÁ KHO GROUP–Website Dienthoaigiakho.vn Giấy chứng nhận Kinh doanh: 41O8033312 UBND Q. Bình Thạnh, HCM cấp ngày 12/11/2016 | Mã số thuế : 8287794405 | Địa Chỉ : 121 Chu Văn An. P26 Bình Thạnh HCM || HKD TUẤN ANH. Chịu trách nhiệm nội dung : Vũ Việt Tuấn Anh “Lời góp ý như một món quà” đến BQL Giá Kho lắng nghe & cải tiến tốt hơn mỗi ngày: trogiup@dienthoaigiakho.vn
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var indexCart = 0;
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.controller("myCtrl", function($scope, $rootScope, $routeParams) {
+            //Thêm sản phẩm
+            $scope.addCart = function(p) {
+                if (typeof $rootScope.cart == 'undefined') {
+                    $rootScope.cart = [];
+                };
+                if ($rootScope.cart.filter(i => i.id == p.id).length == 0) {
+                    $rootScope.cart.push(p);
+                    $rootScope.cart[indexCart].quantity = 1;
+                    indexCart++;
+                }
+            }
+            $rootScope.sumMoney = 0;
+            //Tính tổng tiền bên giỏ hàng
+            if (typeof $rootScope.cart != 'undefined') { //Có giỏ hàng mới tính tổng
+                for (var i = 0; i < $rootScope.cart.length; i++) {
+                    $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].Price;
+                }
+            }
+            //Nhấn nút Cộng để thêm sản phẩm
+            $scope.addClick = function(index) {
+                    $rootScope.cart[index].quantity = $rootScope.cart[index].quantity + 1;
+                    if (typeof $rootScope.cart != 'undefined') {
+                        $rootScope.sumMoney = 0;
+                        for (var i = 0; i < $rootScope.cart.length; i++) {
+                            $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].Price;
+                        }
+                    }
+                }
+                $scope.subClick = function(index) {
+                    $rootScope.cart[index].quantity = $rootScope.cart[index].quantity - 1;
+                    if (typeof $rootScope.cart != 'undefined') {
+                        $rootScope.sumMoney = 0;
+                        for (var i = 0; i < $rootScope.cart.length; i++) {
+                            $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].Price;
+                        }
+                    }
+                }    
+                //Xóa sản phẩm trong giỏ hàng
+            $scope.delProduct = function(index) {
+                $rootScope.cart.splice(index, 1);
+                if (typeof $rootScope.cart != 'undefined') {
+                    $rootScope.sumMoney = 0;
+                    for (var i = 0; i < $rootScope.cart.length; i++) {
+                        $rootScope.sumMoney = $rootScope.sumMoney + $rootScope.cart[i].quantity * $rootScope.cart[i].Price;
+                    }
+                }
+            }
+            $scope.sort = 'Price';
+            $scope.tang = function() {
+                $scope.sort = 'Price';
+            }
+            $scope.giam = function() {
+                $scope.sort = '-Price';
+            }
+            $scope.products = [{
+                id: "ip1",
+                name: "Iphone 14 Pro Max",
+                Image: "images/14pm.webp",
+                Price: 36389000,
+                kind: "iphone",
+                Details: "iPhone 14 Pro Max 512GB Chính Hãng VN/A là mẫu flagship nổi bật nhất trong sự kiện Apple năm 2022 với loạt cải tiến mới về công nghệ cũng như ngoại hình sang chảnh cao cấp vơi gu thẩm mỹ đại chúng. Dòng iPhone 14 Series nhận được nhiều sự kỳ vọng của người dùng ngay từ khi chưa ra mắt. "
+            }, {
+                id: "ip2",
+                name: "Iphone 14 Pro",
+                Image: "images/14p.webp",
+                Price: 24389000 ,
+                kind: "iphone",
+                Details: "Apple đã nói lời tạm biệt với thiết kế màn hình tai thỏ sau 5 năm để giới thiệu notch Dynamic Island - đây được đánh giá là sự thay đổi ngoạn mục đáng mong đợi nhất năm nay. Cụ thể, màn hình iPhone 14 Pro thu hẹp phần camera trước và cảm biến Face ID thành hình dạng như một viên thuốc. Thậm chí, các thông báo ứng dụng, âm nhạc, cuộc gọi đến và nhiều hơn thế nữa cũng sẽ được hiển thị tại khu vực này. Chắc chắn người dùng sẽ cảm nhận được sự thú vị của Dynamic Island khi sử dụng iPhone 14 Pro.."
+            }, {
+                id: "ip3",
+                name: "Iphone 13 Pro Max",
+                Image: "images/13pm.webp",
+                Price: 21489000,
+                kind: "iphone",
+                Details: "Dành cho những ai đang tìm kiếm chiếc iPhone cao cấp nhất đến từ nhà Apple, iPhone 13 Pro Max 512GB mang đến kích thước màn hình lớn, thời lượng pin cực kỳ tốt, màn hình hiển thị đẹp, và Camera nhiều cải tiến. Bên cạnh đó, dung lượng cao nhất mà bạn có thể mua là iPhone 13 Pro Max 1TB sẽ là lựa chọn hoàn hảo cho những ai muốn khai thác toàn bộ sức mạnh của siêu phẩm này"
+            }, {
+                id: "ip4",
+                name: "IPhone 13 Pro",
+                Image: "images/13p.webp",
+                Price: 18989000,
+                kind: "iphone",
+                Details: "iPhone 13 Pro Max cũng sở hữu thiết kế sang trọng với các viền canh máy được làm phẳng, các chi tiết góc cạnh được làm tỉ mỉ tạo nên một chiếc iPhone siêu xịn, đáp ứng nhu cầu thẩm mỹ người dùng. iPhone 13 Pro Max  được hoàn chỉnh với thiết kế nguyên khối bằng chất liệu thép không gỉ. 2 mặt của máy được làm bằng kính Corning Gorilla Glass. Chỉ có một phần khác biệt là ở camera máy được làm mới bởi 1 lớp kính bao phủ cả ống kính camera giúp làm phẳng mặt lưng máy."
+            }, {
+                id: "ip5",
+                name: "IPhone 12 Pro Max",
+                Image: "images/12pm.webp",
+                Price: 16389000,
+                kind: "iphone",
+                Details: "iPhone 12 Pro Max 512GB chính hãng luôn là một trong những siêu phẩm được săn đón nồng nhiệt nhất bộ tứ series iPhone 12. Mặc cho phiên bản iPhone 13 đã chính thức trình làng. Thì chúng vẫn được các tín đồ cuồng nhà Táo đặt mua như thường! Liệu có gì thú vị mà sản phẩm giữ nhiệt lâu đến vậy?"
+            }, {
+                id: "ip6",
+                name: "IPhone 12 Pro",
+                Image: "images/12p.webp",
+                Price: 13389000,
+                kind: "iphone",
+                Details: "Bạn muốn mua một chiếc iPhone hiệu năng cao, thiết kế đẹp nhưng giá phải rẻ chính là mua máy đã qua sử dụng. Đây cũng là lý do vì sao những chiếc iPhone cũ luôn nhận được sự quan tâm của rất nhiều người dùng. Tuy nhiên, bạn đã biết iPhone cũ và iPhone Likenew 99%, 98% là gì chưa?"
+            }, {
+                id: "ip7",
+                name: "IPhone 11 Pro Max",
+                Image: "images/11pm.webp",
+                Price: 12489000,
+                kind: "iphone",
+                Details: "Apple là một trong số ít thương hiệu theo đuổi triết lý không bán sản phẩm giá rẻ, nhờ đó mà các phiên bản cao cấp của họ luôn có chất lượng vượt trội. Chính vì vậy, thị trường iPhone 11 Promax cũ các đời trước luôn được săn đón rất sôi động. Phiên bản iPhone 11 Pro Max 512GB cũ hiện nay được xem là mẫu đáng “đồng tiền bát gạo” nhất thời điểm lúc này. "
+            }, {
+                id: "ip8",
+                name: "IPhone 11 Pro",
+                Image: "images/11p.webp",
+                Price: 9189000,
+                kind: "iphone",
+                Details: "iPhone cũ ngày càng trở nên phổ biến, được bán ở nhiều nơi trên cả nước. Tuy nhiên khi mua hàng đã qua sử dụng, khách hàng cần phải cân nhắc trước, nhất là chọn địa điểm mua hàng. Vậy mua iPhone 11 Pro cũ ở đâu tốt nhất? Có nên chọn Điện thoại Giá Kho?"
+            }, {
+                id: "ss1",
+                name: "Samsung Galaxy S23",
+                Image: "images/sss23.webp",
+                Price: 17989000,
+                kind: "samsung",
+                Details: "Samsung Galaxy S23 là một trong những sản phẩm được mong chờ nhất trong thời điểm hiện tại. Với thiết kế mỏng cùng hiệu năng mạnh mẽ hứa hẹn đây sẽ là chiếc smartphone sẽ làm mưa, làm gió trên thị trường khi chính thức ra mắt. Đây sẽ là sự lựa chọn không thể nào thích hợp hơn dành cho bạn SamFans cũng như những bạn muốn trải nghiệm Android 13. Samsung Galaxy S23 hiện đang có mặt tại Giá Kho với mức giá cực kỳ hấp dẫn."
+            }, {
+                id: "ss2",
+                name: "Samsung Galaxy ZFlip 4",
+                Image: "images/sszf4.webp",
+                Price: 15989000,
+                kind: "samsung",
+                Details: "Samsung Galaxy Z Flip 3 là chiếc điện thoại gập bán chạy nhất thế giới, đó chính là tuyên bố của Samsung trong sự kiện Galaxy Unpacked. Chính vì vậy, khi phát hành phiên bản thứ 4, rõ ràng hãng không cần phải thay đổi quá nhiều mà chỉ với những nâng cấp nhỏ vẫn có thể đáp ứng được nhu cầu của người dùng. Trong bài viết này, chúng ta sẽ cùng nhau tìm hiểu tất tần tật về Samsung Galaxy Z Flip 4."
+            }, {
+                id: "ss3",
+                name: "Samsung Galaxy S21",
+                Image: "images/sss21.webp",
+                Price: 10589000,
+                kind: "samsung",
+                Details: "Samsung S21 FE tiếp nối sự thành công của Galaxy với định hướng tốt về giá – mạnh về hiệu năng của mình cho phân khúc cao cấp. Sản phẩm là sự kết hợp hoàn hảo của một thiết kế thời trang, cấu hình và hiệu năng mạnh mẽ đi kèm mức giá tốt cho người dùng. Samsung Galaxy S hiện có mặt tại Giá Kho với mức giá hấp dẫn."
+            }, {
+                id: "ss4",
+                name: "Samsung Galaxy ZFlip 3",
+                Image: "images//sszf3.webp",
+                Price: 9689000,
+                kind: "samsung",
+                Details: "Một trong những chiếc smartphone hot nhất năm nay có thể kể đến Samsung Galaxy Z Flip3 5G. Với thiết kế được hoàn thiện hơn, mức giá bán cũng bắt đầu dễ chịu, Samsung Galaxy Z Flip3 5G 8GB/128GB chính hãng được khá nhiều săn đón và thích thú."
+            }, {
+                id: "ss5",
+                name: "Samsung Galaxy S20",
+                Image: "images//sss20.webp",
+                Price: 8589000,
+                kind: "samsung",
+                Details: "Samsung Galaxy S20 FE là dòng smartphone mà Samsung ra mắt để gửi lời tri ân đến các fan trung thành đã và đang sử dụng sản phẩm của Samsung. Trong đó, chữ FE đằng sau tên gọi của máy có nghĩa là Fan Edition. Đây là phiên bản giới hạn nên chỉ mở bán trong thời gian ngắn."
+            }, {
+                id: "ss6",
+                name: "Samsung Galaxy M53",
+                Image: "images//ssm53.webp",
+                Price: 8589000,
+                kind: "samsung",
+                Details: "Trở lại cuộc đua công nghệ 2022, Gã khổng lồ đến từ xứ sở Kim Chi đã bắt đầu cho ra mắt các dòng sản phẩm mới. Trong đó, dòng Galaxy M53 được ra mắt tiếp tục ghi nhận sự quan tâm của giới công nghệ, khi sở hữu nhiều thông số ấn tượng cũng như được Samsung bày trí nhiều tính năng thú vị. Cùng Điện thoại Giá Kho cập nhật ngay thông tin bên dưới. "
+            }, {
+                id: "ss7",
+                name: "Samsung Galaxy M32",
+                Image: "images//ssm32.webp",
+                Price: 3989000,
+                kind: "samsung",
+                Details: "Samsung Galaxy M là một trong những dòng điện thoại bán chạy nhất nhà Samsung. Sau thành công của M31, M21 thì Samsung Galaxy M32 8G/128GB Chính Hãng cũng là một sản phẩm nổi bật được nhiều người dùng chọn mua. Đây là một chiếc smartphone được nâng cấp mạnh mẽ về màn hình cũng như dung lượng pin. Cùng đánh giá chi tiết xem sản phẩm này có gì nổi bật."
+            }, {
+                id: "ss8",
+                name: "Samsung Galaxy A04s",
+                Image: "images//ssa04.webp",
+                Price: 3049000,
+                kind: "samsung",
+                Details: "Samsung A đã giới thiệu Galaxy A04s, một điện thoại thông minh cấp thấp mới với nhiều nâng cấp so với Galaxy A04. Samsung không chỉ đưa vào Galaxy A04s màn hình hiển thị có tần số quét nhanh hơn mà còn trang bị cho thiết bị một chip hiện đại hơn Galaxy A04 và tăng thêm 1 camera phía sau. Mặc dù vẫn là một điện thoại thông minh cấp thấp nhưng Galaxy A04s có một số lợi thế so với Galaxy A04. Galaxy A04s có camera thứ ba ở mặt sau, không giống như Galaxy A04. Ngoài ra, Galaxy A04s có một chipset mạnh hơn và màn hình hiển thị nhanh hơn so với tên gọi của nó."
+            }, {
+                id: "xm1",
+                name: "Xiaomi Mi 12 Pro",
+                Image: "images/xam12p.webp",
+                Price: 21489000,
+                kind: "xiaomi",
+                Details: "Xiaomi 12 Pro là sản phẩm có khả năng biến mọi khung hình thành tuyệt tác nhờ bộ ba camera 50MP, màn hình WQHD+ động 120Hz và chipset Snapdragon® 8 Gen 1 tiên tiến bộ sạc nhanh HyperCharge 120W thông minh của nhà Xiaomi. Sản phẩm Xiaomi Mi hiện tại đang có mặt tại Giá Kho với mức giá hấp dẫn."
+            }, {
+                id: "xm2",
+                name: "Xiaomi Mi 12T",
+                Image: "images/xamm12t.webp",
+                Price: 10889000,
+                kind: "xiaomi",
+                Details: "Các điện thoại dòng T của Xiaomi thường ra mắt sau tháng đầu tiên và vài tuần trước dòng tiêu đề tiếp theo. Và mặc dù chúng mang lại nhiều tính năng hàng đầu, nhưng chúng không nhằm mục đích cạnh tranh ở các sản phẩm đầu bảng. Ngược lại, mẫu Xiaomi T được mô tả tốt nhất như một flagship killer. Vì vậy, chúng ta hãy đánh giá Xiaomi 12T, người kế nhiệm của Xiaomi 11T, một chiếc điện thoại mà bạn có thể cân nhắc nhận thay vì các phiên bản trước."
+            }, {
+                id: "xm3",
+                name: "Xiaomi Redmi Note 11",
+                Image: "images/xamn11.webp",
+                Price: 4089000,
+                kind: "xiaomi",
+                Details: "Hãng điện thoại Xiaomi nổi tiếng với các mẫu phân khúc tầm trung gây ấn tượng cũng như làm hài lòng người dùng, nên không có gì ngạc nhiên khi hãng tập trung phát triển điện thoại ở phân khúc này. Do đó, với dòng Xiaomi Redmi Note 11s 8G/128GB được ra mắt tiếp tục định hình hãng Xiaomi ở phân khúc này, với với các trang bị công bị xứng tầm, ấn tượng với mức giá phải chăng."
+            }, {
+                id: "xm4",
+                name: "Xiaomi Redmi Note 10s",
+                Image: "images/xamn10s.webp",
+                Price: 4049000,
+                kind: "xiaomi",
+                Details: "Redmi Note 10S là một điện thoại thông minh khác của Xiaomi trong dòng Redmi Note 10. Chiếc này đang được ra mắt tại Ấn Độ cùng với ba mẫu Redmi Note 10 khác, bao gồm Redmi Note 10, Redmi Note 10 Pro và Redmi Note 10 Pro Max. Redmi Note 10S nằm giữa Redmi Note 10 và Redmi Note 10 Pro, phần lớn giống với Redmi Note 10 nhưng có camera và chipset tốt hơn. Tuy nhiên, nó gần với Redmi Note 10 Pro hơn về giá so với Redmi Note 10, vì vậy camera và chipset tốt hơn sẽ khiến bạn muốn mua điện thoại này thay vì chỉ mua mẫu Pro."
+            }, {
+                id: "xm5",
+                name: "Xiaomi Redmi 10C",
+                Image: "images/xamn10c.webp",
+                Price: 3149000,
+                kind: "xiaomi",
+                Details: "Xiaomi Redmi 10C - Một smartphone tuyệt vời trong phân khúc phổ thông: Màn hình lớn, hiệu năng khủng trong tầm giá còn kèm thời lượng pin gần như vô tận cho một ngày dài."
+            }, {
+                id: "xm6",
+                name: "Xiaomi Redmi 10A",
+                Image: "images/xam10a.webp",
+                Price: 2299000,
+                kind: "xiaomi",
+                Details: "Thuộc phân khúc giá rẻ nên Xiaomi Redmi 10A 2G/32GB ra mắt, hãng Xiaomi nhắm đến phân khúc khách hàng bình dân mong muốn dòng điện thoại thông minh nhưng sở hữu tính năng tốt cùng hiệu năng ổn định. Thấu hiểu điều đó, hãng Xiaomi đã cho chiếc Redmi 10A đảm bảo giúp người dùng tận hưởng các tác vụ cơ bản như nghe gọi đến các tác vụ “cao cấp” hơn như chơi game, lướt web…Hãy cùng Điện thoại Giá Kho khám phá chi tiết sản phẩm ngay bên dưới! "
+            }, {
+                id: "xm7",
+                name: "Xiaomi Redmi A1",
+                Image: "images/xama1.webp",
+                Price: 1849000,
+                kind: "xiaomi",
+                Details: "Xiaomi Redmi A1 2G/32GB là mẫu điện thoại giá rẻ phù hợp với nhiều đối tượng khách hàng, đáp ứng nhu cầu khác nhau từ giải trí cơ bản đến hỗ trợ học tập hay nghe gọi. Với thiết kế khá đẹp mắt, hiệu năng hơn kỳ vọng cùng dung lượng pin cho cả ngày dài sử dụng. Hãy cùng Điện thoại Giá Kho khám phá ngay bên dưới!"
+            }, {
+                id: "xm8",
+                name: "Xiaomi Redmi 9A",
+                Image: "images/xam9a.webp",
+                Price: 1829000,
+                kind: "xiaomi",
+                Details: "Xiaomi Redmi 9A nhiều tính năng - Giá cả phải chănglà mẫu điện thoại giá rẻ phù hợp với nhiều đối tượng khách hàng, đáp ứng nhu cầu khác nhau từ giải trí cơ bản đến hỗ trợ học tập hay nghe gọi. Với thiết kế khá đẹp mắt, hiệu năng hơn kỳ vọng cùng dung lượng pin cho cả ngày dài sử dụng."
+            }];
+            //Truyền tham số index từ trang chủ đến trang sản phẩm chi tiết
+            $scope.index = $routeParams.url;
+            $scope.index = $scope.products.findIndex(record => record.id == $routeParams.url);
+
+        });
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when("/detail/:url", {
+                    templateUrl: "chitiet.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .when("/cart", {
+                    templateUrl: "cart.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .when("/about", {
+                    templateUrl: "about.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .when("/contact", {
+                    templateUrl: "contact.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .otherwise({
+                    templateUrl: "listProduct.html",
+                    controller: "myCtrl"
+                })
+        });
+    </script>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Mar 1, 2023 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + ": " + hours + ": " +
+                minutes + ": " + seconds;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+</html>

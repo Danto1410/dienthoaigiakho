@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết</title>
+    <link rel="icon" href="images/dtgkicon.png">
+</head>
+<style>
+button {
+    background-color: rgb(37 120 242);
+    color: white !important;
+}
+    
+    button:hover {
+        background-color:rgb(235, 200, 27);
+        color: rgb(0, 0, 0);
+    }
+    
+    #p {
+
+        text-decoration: none;
+    }
+    #btn1 {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: rgb(235, 200, 27);
+            font-size: 13px;
+            font-weight: bolder;
+        }
+        
+        #btn1:hover {
+            background-color:rgb(235, 200, 27);
+            color: rgb(0, 0, 0);
+        }
+</style>
+
+<body>
+
+
+    <img class="float-left" width="300px" src="{{products[index].Image}}" alt="">
+    <h3><b>Tên loại hàng :</b> {{products[index].name}}</h3>
+    <br>
+    <h3><b>Giá : </b><h4>{{products[index].Price}}</h4></h3>
+    <br>
+    <h3><b>Thông tin thêm : </b>{{products[index].Details}}</h3>
+    <br>
+    <button style="font-size:17px" ng-click="addCart(products[index])">Thêm vào giỏ hàng</button>
+    <a href="giohang.html">
+        <p id="p" style="font-size: 18px; font-weight: bolder;">Mua các sản phẩm khác</p>
+    </a>
+</body>
+
+</html>
